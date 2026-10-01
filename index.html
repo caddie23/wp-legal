@@ -31,10 +31,10 @@
     <p><strong>WellPad: Alberta LSD Lookup</strong></p>
     <p><strong>Developer:</strong> Southpaw Digital Labs Inc.<br>
     <strong>Effective Date:</strong> January 7, 2026<br>
-    <strong>Last Updated:</strong> September 30, 2026</p>
+    <strong>Last Updated:</strong> October 1, 2026</p>
 
     <div class="summary">
-        <strong>The short version:</strong> There are no accounts, no ads, and no analytics. Your favorites, history, notes, photos and corrections stay on your device. A few features need the internet: live weather sends the parcel's coordinates to a weather service, well registry updates are downloaded from our data server, purchases go through Google Play, and crash reports go to Firebase Crashlytics. We never sell your data.
+        <strong>The short version:</strong> There are no accounts, no ads, and no analytics. Your favorites, history, notes, photos and corrections stay on your device. A few features need the internet: well registry updates are downloaded from our data server, and purchases go through Google Play on Android or the App Store on iPhone. On Android, crash reports go to Firebase Crashlytics; on iPhone they stay on your device unless you choose to share them. We never sell your data. This policy covers WellPad on Android and on iPhone and iPad (iOS).
     </div>
 
     <h2>Overview</h2>
@@ -60,11 +60,16 @@
         <tr><td>Notes &amp; photos</td><td>Your field notes and photos for each parcel</td><td>Delete anytime</td></tr>
         <tr><td>Corrections</td><td>GPS coordinates you saved for a wellhead</td><td>Delete anytime</td></tr>
         <tr><td>Settings</td><td>Preferences, free-tier lookup count, trial and Pro status</td><td>Uninstall to remove</td></tr>
+        <tr><td>Crash reports (iPhone)</td><td>Diagnostic reports Apple hands the app after a crash (newest 10)</td><td>Delete in Settings, or uninstall</td></tr>
     </table>
+    <p><strong>On iPhone,</strong> the date your free trial started is also kept in the iOS Keychain on your device, so reinstalling the app doesn't restart the trial. It contains only that date, is never sent anywhere, and is removed if you erase your iPhone.</p>
     <p><strong>You own this data.</strong> You can export a full backup including photos (Settings &rarr; Share Backup), delete favorites, history, notes, photos and corrections (Settings &rarr; Clear All Data), or uninstall the app to remove everything.</p>
 
     <h3>Android Backup</h3>
     <p>If you have Android backup turned on, Android may back up your favorites, history, notes, corrections and settings to <strong>your own Google account</strong>, and copy them (with photos) when you transfer to a new phone. This is handled by Android and Google, not by us, and you can turn it off in your phone's settings. We cannot access these backups.</p>
+
+    <h3>iPhone Backup (iCloud)</h3>
+    <p>If you use iCloud Backup or back up your iPhone to a computer, your favorites, history, notes, photos, corrections and settings are included in <strong>your own backup</strong>, so they come back when you restore or move to a new iPhone. The large well and parcel databases are not backed up, since they come with the app. This is handled by Apple, not by us, and you can turn it off in your iPhone's settings. We cannot access these backups.</p>
 
     <h2>Location Access</h2>
     <p>WellPad asks for location permission for two features:</p>
@@ -73,11 +78,15 @@
         <li><strong>Update LSD Location:</strong> saves your current position as a corrected wellhead location</li>
     </ul>
     <p>Your GPS position is used on your device and stored <strong>only locally</strong> (in History and Corrections). WellPad does not send your GPS position to us or anyone else. You can deny location permission and still use every other feature.</p>
+<!-- Weather hidden until a provider is chosen (2026-10-01):
     <p>When Live Lease Weather is on, the weather request contains the <strong>parcel's</strong> coordinates (see below). After a GPS lookup, those are the coordinates of the parcel you're in, so they are close to where you are.</p>
+-->
 
     <h2>Features That Use the Internet</h2>
 
-    <h3>Live Lease Weather (Open-Meteo)</h3>
+<!-- Weather hidden until a provider is chosen (2026-10-01):
+    <h3>Live Lease Weather (Open-Meteo, Android)</h3>
+    <p>Live Lease Weather is currently in the Android app only. The iPhone app makes no weather requests.</p>
     <ul>
         <li><strong>What is sent:</strong> the latitude and longitude of the parcel you're viewing, and your device's IP address (as with any internet request)</li>
         <li><strong>When:</strong> each time you open a parcel's details, while Live Lease Weather is turned on (it is on by default)</li>
@@ -86,6 +95,7 @@
         <li><strong>Privacy policy:</strong> <a href="https://open-meteo.com/en/terms">https://open-meteo.com/en/terms</a></li>
     </ul>
     <p>We don't send any identifier or other information with the request.</p>
+-->
 
     <h3>Well Registry Updates (GitHub)</h3>
     <ul>
@@ -95,23 +105,33 @@
         <li><strong>Privacy policy:</strong> <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a></li>
     </ul>
 
-    <h3>Purchases (Google Play Billing)</h3>
+    <h3>Purchases on Android (Google Play Billing)</h3>
     <p>Purchases of WellPad Pro are processed entirely by Google Play. The app asks Google Play which purchases your signed-in Google account owns, to unlock Pro. We never see your payment details.
     Privacy policy: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
 
-    <h3>Crash Reporting (Firebase Crashlytics)</h3>
+    <h3>Purchases on iPhone (App Store)</h3>
+    <p>Purchases of WellPad Pro on iPhone are processed entirely by Apple through the App Store. The app asks the App Store which purchases your Apple Account owns, to unlock Pro. We never see your payment details or your Apple Account.
+    Privacy policy: <a href="https://www.apple.com/legal/privacy/">https://www.apple.com/legal/privacy/</a></p>
+
+    <h3>Crash Reporting on Android (Firebase Crashlytics)</h3>
     <div class="highlight">
         <p><strong>What is sent when the app crashes:</strong> the crash stack trace, device model, manufacturer and Android version, app version, and a random installation identifier created by Crashlytics to count crashes. It is not linked to your name, email, or Google account.</p>
         <p><strong>What is NOT sent:</strong> your location, lookups, favorites, history, notes, photos, or anything you type.</p>
     </div>
     <p>Privacy policy: <a href="https://firebase.google.com/support/privacy">https://firebase.google.com/support/privacy</a></p>
 
+    <h3>Crash Reports on iPhone (Apple MetricKit)</h3>
+    <div class="highlight">
+        <p>The iPhone app uses no crash-reporting service. After a crash, iOS gives the app a diagnostic report (the crash details, device model, iOS version and app version). WellPad keeps the newest 10 <strong>on your device</strong> and tells you once; the report is only sent if you choose to share it, for example by email.</p>
+        <p>Separately, if you turned on <strong>Share with App Developers</strong> in your iPhone's Analytics settings, Apple may send us anonymous crash and performance statistics. This is controlled by Apple and you can turn it off in Settings &rarr; Privacy &amp; Security &rarr; Analytics &amp; Improvements.</p>
+    </div>
+
     <h3>External Map Applications</h3>
-    <p>When you tap "Navigate" or "Share", WellPad hands the parcel's coordinates to the map or sharing app you choose. Those apps have their own privacy policies.</p>
+    <p>When you tap "Navigate" or "Share", WellPad hands the parcel's coordinates to the map or sharing app you choose (on iPhone, Google Maps or Apple Maps). Those apps have their own privacy policies.</p>
 
     <h2>Data Security</h2>
     <ul>
-        <li>Data on your device is kept in the app's private storage, protected by Android's app sandboxing</li>
+        <li>Data on your device is kept in the app's private storage, protected by Android's or iOS's app sandboxing</li>
         <li>All internet requests use encrypted HTTPS connections</li>
         <li>Uninstalling the app deletes all data stored by the app on your device</li>
     </ul>
@@ -119,8 +139,12 @@
     <h2>Data Retention and Deletion</h2>
     <ul>
         <li><strong>On your device:</strong> kept until you delete it or uninstall the app. See <a href="delete-data.html">how to delete your data</a>.</li>
-        <li><strong>Crash reports:</strong> kept by Firebase Crashlytics under Google's retention policy. To ask us to delete crash reports from your device, email us.</li>
+        <li><strong>Crash reports (Android):</strong> kept by Firebase Crashlytics under Google's retention policy. To ask us to delete crash reports from your device, email us.</li>
+        <li><strong>Crash reports (iPhone):</strong> kept on your device (newest 10) until you delete them in Settings or uninstall. Reports you share are kept only as long as needed to fix the problem.</li>
+        <li><strong>Update requests:</strong> not stored by us. GitHub handles its own server logs.</li>
+<!-- Weather hidden until a provider is chosen (2026-10-01):
         <li><strong>Weather and update requests:</strong> not stored by us. Open-Meteo and GitHub handle their own server logs.</li>
+-->
     </ul>
 
     <h2>Children's Privacy</h2>
@@ -134,7 +158,9 @@
     <ul>
         <li>Access your data (Settings &rarr; Share Backup)</li>
         <li>Delete your data (Settings &rarr; Clear All Data, or uninstall)</li>
+<!-- Weather hidden until a provider is chosen (2026-10-01):
         <li>Turn off Live Lease Weather</li>
+-->
         <li>Deny location permission</li>
         <li>Contact us with any privacy question</li>
     </ul>
@@ -142,9 +168,9 @@
     <h2>Summary</h2>
     <table>
         <tr><th>Question</th><th>Answer</th></tr>
-        <tr><td>Do you collect personal data?</td><td>No accounts or personal details. Crash reports and weather requests are described above</td></tr>
+        <tr><td>Do you collect personal data?</td><td>No accounts or personal details. Crash reports are described above</td></tr>
         <tr><td>Do you sell data?</td><td>No</td></tr>
-        <tr><td>Do you share data with third parties?</td><td>Only what each feature needs: parcel coordinates to Open-Meteo for weather, crash reports to Firebase Crashlytics, purchases through Google Play</td></tr>
+        <tr><td>Do you share data with third parties?</td><td>Only what each feature needs. Android: crash reports to Firebase Crashlytics, purchases through Google Play. iPhone: purchases through the App Store; nothing else unless you choose to share a crash report</td></tr>
         <tr><td>Is your data stored on our servers?</td><td>No</td></tr>
         <tr><td>Can I delete my data?</td><td>Yes, in Settings or by uninstalling</td></tr>
         <tr><td>Can I use the app without an account?</td><td>Yes</td></tr>
